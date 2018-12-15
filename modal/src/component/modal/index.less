@@ -1,0 +1,148 @@
+.modal-mask {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+
+  background-color: rgba(0, 0, 0, .35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &_show {
+    opacity: 1;
+    animation: showmask 1s
+  }
+
+  &_hide {
+    opacity: 0;
+    animation: hidemask 1s
+  }
+}
+
+@keyframes showmask{
+  from {
+    opacity: 0
+  }
+  to {
+    opacity: 1
+  }
+}
+
+@keyframes hidemask{
+  from {
+    opacity: 1
+  }
+  to {
+    opacity: 0
+  }
+}
+
+.modal-box {
+  position: relative;
+  background-color: #fff;
+  font-size: .18rem;
+  color: #888;
+
+  border-radius: .08rem;
+  width: 80%;
+
+  &-popup {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-radius: 0;
+
+    &_show {
+      animation: slideup 1s
+    }
+
+    &_hide {
+      animation: slidedown 1s
+    }
+  }
+
+  .modal-header {
+    margin-top: .2rem;
+    font-size: .25rem;
+    color: #2d2b2b;
+    text-align: center;
+  }
+
+  .modal-close {
+    font-size: .2rem;
+    position: absolute;
+    top: .08rem;
+    right: .08rem;
+  }
+
+  .modal-content {
+    padding: .1rem .2rem .25rem;
+    text-align: center;
+    max-height: 1.5rem;
+    overflow: auto;
+  }
+
+  .modal-footer {
+    height: .5rem;
+    line-height: .5rem;
+    text-align: center;
+    font-size: .18rem;
+    border-top: 1px solid #ddd;
+    display: flex;
+
+    &-btn {
+      flex: 1;
+      text-align: center;
+      border-right: 1px solid #ddd;
+
+      &:last-child {
+        border-right: none
+      }
+
+      &_confirm {
+        color: #14aec5;
+      }
+
+      &_cancel {
+        color: #969696;
+      }
+
+    }
+  }
+}
+
+@keyframes slideup {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes slidedown {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(100%);
+  }
+}
+
+@font-face {
+  font-family: 'iconfont';
+  src: url('//at.alicdn.com/t/font_967401_lbwts4qw5jq.eot');
+  src: url('//at.alicdn.com/t/font_967401_lbwts4qw5jq.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_967401_lbwts4qw5jq.woff') format('woff'),
+  url('//at.alicdn.com/t/font_967401_lbwts4qw5jq.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_967401_lbwts4qw5jq.svg#iconfont') format('svg');
+}
+
+.iconfont{
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+}
