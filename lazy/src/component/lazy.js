@@ -35,7 +35,7 @@ function lazyWrapper(WrappedComponent) {
         });
 
         // 为了实现加载的过程，让loading的状态持续一秒，实际使用时可以注释这段代码
-        await this.sleep(10000);
+        await this.sleep(2000);
 
         // 开始加载组件
         let WrappedComponent_module = await WrappedComponent.init();
